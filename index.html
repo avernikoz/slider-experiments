@@ -5,94 +5,36 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        .wrap {
-            margin: 0 auto;
-            width: 90%;
-        }
-
-        .tabs-text {
-            display: inline-block;
-            margin: 10px 20px;
-        }
-
-        .tab-container {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .active {
-            background: red;
-        }
-
-        .disable {
-            display: none;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-        .image_container{
-            margin: 5px;
-        }
-
-    </style>
+    <title>Slider experiments</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!--My styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--My styles-->
+
+
+
+    <!--SLICK-->
     <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <!--SLICK-->
+
+    <!--OwlCarousel2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
+    <!--OwlCarousel2-->
 
 
-    <script type="text/javascript">
-        window.onload = function () {
-            var tabrow1 = document.querySelector('#tab-cont-1');
-            var tabrow2 = document.querySelector('#tab-cont-2');
+    
 
-            tabrow1.addEventListener('click', MakeActive);
-            tabrow2.addEventListener('click', MakeActive);
+    <!--My inicialization sliders script-->
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!--My inicialization sliders script-->
 
-            function MakeActive(e) {
-                e.stopPropagation();
-
-                if (e.target.className.toLowerCase() === 'tabs-text') {
-                    var curval = e.target.textContent;
-                    var current_tab_container = e.target.parentElement.id;
-
-                    var all_tabs_text = document.querySelectorAll('#' + current_tab_container + '>.tabs-text');
-                    all_tabs_text.forEach(function (t) {
-                        t.classList.remove('active');
-                    })
-                    e.target.classList.add('active');
-
-
-                    var currenttab = document.querySelector('#' + current_tab_container + '>#' + curval);
-                    var alltabs = document.querySelectorAll('#' + current_tab_container + '>.tab');
-                    alltabs.forEach(function (t) {
-                        t.classList.add('disable');
-                    })
-                    currenttab.classList.remove('disable');
-                }
-
-            }
-        };
-//
-               $(document).ready(function(){
-                   $('.slick-class').slick({
-                       slidesToShow: 3,
-                       slidesToScroll: 1,
-                       autoplay: true,
-                       autoplaySpeed: 2000,
-                   });
-               });
-
-
-    </script>
-
-    <!--<title>Document</title>-->
-    <!--JQUERY-->
 </head>
 <body>
 <div class="wrap">
