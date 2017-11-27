@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrap {
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .tabs-text {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        .tab-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .active {
+            background: red;
+        }
+
+        .disable {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .image_container{
+            margin: 5px;
+        }
+
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var tabrow1 = document.querySelector('#tab-cont-1');
+            var tabrow2 = document.querySelector('#tab-cont-2');
+
+            tabrow1.addEventListener('click', MakeActive);
+            tabrow2.addEventListener('click', MakeActive);
+
+            function MakeActive(e) {
+                e.stopPropagation();
+
+                if (e.target.className.toLowerCase() === 'tabs-text') {
+                    var curval = e.target.textContent;
+                    var current_tab_container = e.target.parentElement.id;
+
+                    var all_tabs_text = document.querySelectorAll('#' + current_tab_container + '>.tabs-text');
+                    all_tabs_text.forEach(function (t) {
+                        t.classList.remove('active');
+                    })
+                    e.target.classList.add('active');
+
+
+                    var currenttab = document.querySelector('#' + current_tab_container + '>#' + curval);
+                    var alltabs = document.querySelectorAll('#' + current_tab_container + '>.tab');
+                    alltabs.forEach(function (t) {
+                        t.classList.add('disable');
+                    })
+                    currenttab.classList.remove('disable');
+                }
+
+            }
+        };
+//
+               $(document).ready(function(){
+                   $('.slick-class').slick({
+                       slidesToShow: 3,
+                       slidesToScroll: 1,
+                       autoplay: true,
+                       autoplaySpeed: 2000,
+                   });
+               });
+
+
+    </script>
+
+    <!--<title>Document</title>-->
+    <!--JQUERY-->
+</head>
+<body>
+<div class="wrap">
+
+    <div class="tab-container">
+        <div class="slick-class">
+            <div class="image_container"><img src="https://placekitten.com/300/301" alt=""></div>
+            <div class="image_container"><img src="https://placekitten.com/300/301" alt=""></div>
+            <div class="image_container"><img src="https://placekitten.com/300/301" alt=""></div>
+            <div class="image_container"><img src="https://placekitten.com/300/301" alt=""></div>
+        </div>
+    </div>
+
+    <div class="tab-container" id="tab-cont-1">
+        <div class="tabs-text">tab1</div>
+        <div class="tabs-text">tab2</div>
+
+        <div class="tab active" id="tab1">
+            <div class="slick-class">
+
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            </div>
+        </div>
+
+        <div class="tab disable" id="tab2">
+            <div class="slick-class">
+
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+                <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="tab-container" id="tab-cont-2">
+
+        <div class="tabs-text">tab3</div>
+        <div class="tabs-text">tab4</div>
+        <div class="tabs-text">tab5</div>
+        <div class="tabs-text">tab6</div>
+        <div class="tabs-text">tab7</div>
+        <div class="tabs-text">tab8</div>
+    <div class="tab disable" id="tab3">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+    <div class="tab disable" id="tab4">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+
+    <div class="tab active" id="tab5">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+    <div class="tab disable" id="tab6">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+    <div class="tab disable" id="tab7">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+    <div class="tab disable" id="tab8">
+        <div class="slick-class">
+
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+            <div class="image_container"><img src="img/302.jpeg" alt=""></div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>
