@@ -18,14 +18,23 @@ window.onload = function () {
             })
             e.target.classList.add('active');
 
-
-            var currenttab = document.querySelector('#' + current_tab_container + '>#' + curval);
-            var alltabs = document.querySelectorAll('#' + current_tab_container + '>.tab');
-            alltabs.forEach(function (t) {
-                t.classList.add('disable');
-            })
-            currenttab.classList.remove('disable');
+            makeActiveTab(current_tab_container,curval);
         }
+
+    }
+
+    function makeActiveTab(current_tab_container,curval) {
+
+        var currenttab = document.querySelector('#' + current_tab_container + '>#' + curval);
+        var alltabs = document.querySelectorAll('#' + current_tab_container + '>.tab');
+        alltabs.forEach(function (t) {
+            t.classList.add('disable');
+            t.classList.remove('active');
+
+        })
+        currenttab.classList.remove('disable');
+        currenttab.classList.add('active');
+
 
     }
 };
@@ -41,11 +50,56 @@ window.onload = function () {
 
 // For OwlCarousel2.js
 
+// $(document).ready(function(){
+//     $(".slick-class").owlCarousel( {
+//         items: 3,
+//         dots: false,
+//         autoplay: true,
+//         autoplayTimeout: 2000,
+//     });
+// });
+
+
+// Tiny-slider
+
 $(document).ready(function(){
-    $(".slick-class").owlCarousel( {
-        items: 3,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 2000,
-    });
+
+    const allsliders = document.querySelectorAll('.slick-class');
+    console.log(allsliders);
+
+    for(const one of allsliders) {
+        new tns({
+            container: one,
+            items: 3,
+            slideBy: 'page',
+            autoplay: true,
+            // rewind: true,
+            mouseDrag: true,
+            loop: true,
+            nav: false,
+            controls: false
+
+        })
+    }
 });
+
+
+
+
+
+//Siema
+// $(document).ready(function(){
+//
+//     const siemas = document.querySelectorAll('.slick-class');
+//
+//     for(const siema of siemas) {
+//         new Siema({
+//             selector: siema,
+//             duration: 200,
+//             easing: 'ease-out',
+//             perPage: 1,
+//             loop: true,
+//         })
+//     }
+//
+// });
