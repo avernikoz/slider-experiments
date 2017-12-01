@@ -39,14 +39,14 @@ window.onload = function () {
     }
 };
 // For slick.js
-// $(document).ready(function(){
-//     $('.slick-class').slick({
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         autoplay: true,
-//         autoplaySpeed: 2000,
-//     });
-// });
+$(document).ready(function(){
+    $('.slick-class').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+});
 
 // For OwlCarousel2.js
 
@@ -62,26 +62,26 @@ window.onload = function () {
 
 // Tiny-slider
 
-$(document).ready(function(){
-
-    const allsliders = document.querySelectorAll('.slick-class');
-    console.log(allsliders);
-
-    for(const one of allsliders) {
-        new tns({
-            container: one,
-            items: 3,
-            slideBy: 'page',
-            autoplay: true,
-            // rewind: true,
-            mouseDrag: true,
-            loop: true,
-            nav: false,
-            controls: false
-
-        })
-    }
-});
+// $(document).ready(function(){
+//
+//     const allsliders = document.querySelectorAll('.slick-class');
+//     console.log(allsliders);
+//
+//     for(const one of allsliders) {
+//         new tns({
+//             container: one,
+//             items: 3,
+//             slideBy: 'page',
+//             autoplay: true,
+//             // rewind: true,
+//             mouseDrag: true,
+//             loop: true,
+//             nav: false,
+//             controls: false
+//
+//         })
+//     }
+// });
 
 
 
